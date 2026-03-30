@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuaib Ahmed</title>
+  <meta name="description" content="Shuaib Ahmed - Founding Engineer at Deeptrust. Building voice and video call security for enterprises.">
+  <meta name="author" content="Shuaib Ahmed">
+
+  <meta property="og:title" content="Shuaib Ahmed">
+  <meta property="og:description" content="Founding Engineer at Deeptrust. Building voice and video call security for enterprises.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shuaibahmed01.github.io/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #050505;
+      color: #e5e5e5;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, #111 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      padding: 80px 24px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .hero-left {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .hero-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #222;
+    }
+
+    .hero-name {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .hero-contact {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #666;
+      margin-top: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-contact a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-contact a:hover {
+      color: #ccc;
+    }
+
+    .hero-contact .sep {
+      margin: 0 6px;
+      color: #333;
+    }
+
+    /* ---- Social Icons ---- */
+    .hero-socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .hero-socials a {
+      color: #555;
+      font-size: 16px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #1a1a1a;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s;
+      background: #0a0a0a;
+    }
+
+    .hero-socials a:hover {
+      color: #fff;
+      border-color: #444;
+    }
+
+    /* ---- Bio ---- */
+    .hero-bio {
+      max-width: 640px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #888;
+      font-weight: 350;
+    }
+
+    .hero-bio p {
+      margin-bottom: 14px;
+    }
+
+    .hero-bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero-bio .hl {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .hero-bio a {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .hero-bio a:hover {
+      color: #ccc;
+    }
+
+    /* ---- Divider ---- */
+    .divider {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .divider-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+    }
+
+    /* ---- Section ---- */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, #1a1a1a, transparent);
+    }
+
+    /* ---- Experience Cards ---- */
+    .exp-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exp-card {
+      background: #0a0a0a;
+      border: 1px solid #151515;
+      border-radius: 12px;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .exp-card:hover {
+      border-color: #252525;
+    }
+
+    .exp-card.open {
+      border-color: #2a2a2a;
+      background: #0c0c0c;
+    }
+
+    .exp-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .exp-card-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .exp-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid #1a1a1a;
+      flex-shrink: 0;
+    }
+
+    .exp-logo img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .exp-logo.logo-round img {
+      border-radius: 6px;
+    }
+
+    .exp-company {
+      font-size: 15px;
+      color: #e5e5e5;
+      font-weight: 500;
+    }
+
+    .exp-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #888;
+      background: #151515;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+      margin-left: 10px;
+      border: 1px solid #1a1a1a;
+    }
+
+    .exp-role {
+      font-size: 13px;
+      color: #4a4a4a;
+      margin-top: 3px;
+    }
+
+    .exp-chevron {
+      color: #333;
+      font-size: 11px;
+      transition: transform 0.25s;
+    }
+
+    .exp-card.open .exp-chevron {
+      transform: rotate(180deg);
+      color: #888;
+    }
+
+    .exp-details {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #151515;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .exp-card.open .exp-details {
+      display: block;
+    }
+
+    /* ---- Education ---- */
+    .edu-card {
+      background: #0a0a0a;
+      border: 1px solid #151515;
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .edu-name {
+      font-size: 15px;
+      color: #e5e5e5;
+      font-weight: 500;
+    }
+
+    .edu-degree {
+      font-size: 13px;
+      color: #4a4a4a;
+      margin-top: 3px;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #1a1a1a;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 640px) {
+      .hero-top {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .hero-name {
+        font-size: 28px;
+      }
+
+      .hero-avatar {
+        width: 80px;
+        height: 80px;
+      }
+
+      .hero-contact {
+        font-size: 11px;
+      }
+
+      .hero-socials {
+        margin-top: 0;
+      }
+
+      .hero-bio {
+        font-size: 15px;
+      }
+
+      .exp-card {
+        padding: 16px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-top">
+        <div class="hero-left">
+          <img src="images/Profile_Pic.jpeg" alt="Shuaib Ahmed" class="hero-avatar">
+          <div>
+            <h1 class="hero-name">Shuaib Ahmed</h1>
+            <div class="hero-contact">
+              <a href="mailto:shuahmed@ucdavis.edu">shuahmed@ucdavis.edu</a>
+              <span class="sep">|</span>
+              <a href="tel:9162809413">(916) 280-9413</a>
+            </div>
+          </div>
+        </div>
+        <nav class="hero-socials">
+          <a href="mailto:shuahmed@ucdavis.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/shuaibahmed01" title="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/shuaib-ahmed-4a5396251/" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://scholar.google.com/citations?user=M3wsmjQAAAAJ&hl=en&authuser=1" title="Google Scholar" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="files/ShuaibAhmedResumeCurrent.pdf" title="Resume" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i></a>
+        </nav>
+      </div>
+      <div class="hero-bio">
+        <p>Founding engineer at <a href="https://www.deeptrust.ai/" target="_blank" rel="noopener">Deeptrust</a>. We're building voice and video call security for enterprises, creating the trust layer for AI.</p>
+        <p>Previously worked on EBS infrastructure at <span class="hl">AWS</span>, age verification at <span class="hl">Meta</span>, applied AI at <span class="hl">GEICO</span>, and research in adversarial machine learning at <span class="hl">UC Davis</span>. Co-authored a <a href="https://arxiv.org/abs/2406.07647" target="_blank" rel="noopener">paper</a> on evasive bot traffic (ACM IMC '25).</p>
+        <p>I love building and I'm super interested in the startup space. On the side, I also enjoy weightlifting, getting coffee, and visiting new places. I'm always interested in meeting new people, feel free to reach out!</p>
+      </div>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- Experience -->
+    <div class="section">
+      <h2 class="section-label">Experience</h2>
+      <div class="exp-grid">
+
+        <div class="exp-card" onclick="this.classList.toggle('open')">
+          <div class="exp-card-top">
+            <div class="exp-card-left">
+              <div class="exp-logo">
+                <img src="images/logos/deeptrust.svg" alt="Deeptrust">
+              </div>
+              <div>
+                <div style="display: flex; align-items: center;">
+                  <span class="exp-company">Deeptrust</span>
+                  <span class="exp-badge">current</span>
+                </div>
+                <div class="exp-role">Founding Engineer</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down exp-chevron"></i>
+          </div>
+          <div class="exp-details">Contributing to core product and building ML infrastructure. Leading engineering for an AI-powered call security platform, building ML pipelines, eval infrastructure, and prompt optimization pipelines.</div>
+        </div>
+
+        <div class="exp-card" onclick="this.classList.toggle('open')">
+          <div class="exp-card-top">
+            <div class="exp-card-left">
+              <div class="exp-logo">
+                <i class="fa-brands fa-aws" style="color: #FF9900; font-size: 20px;"></i>
+              </div>
+              <div>
+                <span class="exp-company">AWS</span>
+                <div class="exp-role">Software Engineer Intern</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down exp-chevron"></i>
+          </div>
+          <div class="exp-details">Worked on EBS infrastructure. Built out the EBS virtualization testing sandbox as well as the first EBS internal MCP server, enabling AI agents to automate test orchestration.</div>
+        </div>
+
+        <div class="exp-card" onclick="this.classList.toggle('open')">
+          <div class="exp-card-top">
+            <div class="exp-card-left">
+              <div class="exp-logo">
+                <i class="fa-brands fa-meta" style="color: #1877F2; font-size: 18px;"></i>
+              </div>
+              <div>
+                <span class="exp-company">Meta</span>
+                <div class="exp-role">Software Engineer Intern</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down exp-chevron"></i>
+          </div>
+          <div class="exp-details">Worked on the age collection and verification team, continuing to build out the age verification pipeline across Facebook, Instagram, WhatsApp, and Threads.</div>
+        </div>
+
+        <div class="exp-card" onclick="this.classList.toggle('open')">
+          <div class="exp-card-top">
+            <div class="exp-card-left">
+              <div class="exp-logo logo-round">
+                <img src="images/logos/geico.png" alt="GEICO" style="width: 32px; height: 32px;">
+              </div>
+              <div>
+                <span class="exp-company">GEICO</span>
+                <div class="exp-role">Software Engineer Intern</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down exp-chevron"></i>
+          </div>
+          <div class="exp-details">Worked on applied AI, building out the first customer service chatbot currently being used in production.</div>
+        </div>
+
+        <div class="exp-card" onclick="this.classList.toggle('open')">
+          <div class="exp-card-top">
+            <div class="exp-card-left">
+              <div class="exp-logo">
+                <img src="images/logos/ucdavis.svg" alt="UC Davis" style="width: 28px; height: 28px;">
+              </div>
+              <div>
+                <span class="exp-company">UC Davis</span>
+                <div class="exp-role">Research Assistant</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down exp-chevron"></i>
+          </div>
+          <div class="exp-details">Research in applications of adversarial machine learning and generative models for web security and internet privacy. Co-authored paper on evasive bot detection, accepted at ACM IMC '25.</div>
+        </div>
+
+        <div class="exp-card" onclick="this.classList.toggle('open')">
+          <div class="exp-card-top">
+            <div class="exp-card-left">
+              <div class="exp-logo">
+                <img src="images/logos/timesync.svg" alt="TimeSync" style="width: 28px; height: 28px;">
+              </div>
+              <div>
+                <span class="exp-company">TimeSync</span>
+                <div class="exp-role">Co-founder &amp; CEO</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down exp-chevron"></i>
+          </div>
+          <div class="exp-details">Co-founded and led development of a scheduling platform serving users across multiple organizations.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- Education -->
+    <div class="section">
+      <h2 class="section-label">Education</h2>
+      <div class="edu-card">
+        <div class="exp-logo">
+          <img src="images/logos/ucdavis.svg" alt="UC Davis" style="width: 28px; height: 28px;">
+        </div>
+        <div>
+          <div class="edu-name">UC Davis</div>
+          <div class="edu-degree">B.S. Computer Science</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Shuaib Ahmed</p>
+    </footer>
+
+  </div>
+</body>
+</html>
